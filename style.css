@@ -42,7 +42,7 @@ body {
 .banner-wrapper {
     width: 100%;
     height: 100%;
-
+    user-select: none;
 }
 
 .img-banner {
@@ -56,6 +56,7 @@ body {
     position: absolute;
     top: 2.7rem;
     left: 2.3rem;
+    user-select: none;
 }
 
 nav {
@@ -119,6 +120,7 @@ nav {
     padding: 0rem .18rem;
     background-color: white;
     opacity: .9;
+    user-select: none;
 }
 
 .translate-wrapper img {
@@ -192,7 +194,6 @@ nav {
 .bc5 {
     object-fit: cover;
     position: relative;
-    z-index: -1;
 }
 
 .bc5 img {
@@ -298,7 +299,7 @@ nav {
     color: gray;
     position: absolute;
     text-align: center;
-    top: 28rem;
+    top: 60%;
     width: 100%;
     font-family: var(--font1);
     font-size: 1.7rem;
@@ -309,13 +310,12 @@ nav {
 .h2-photo {
     width: 100%;
     padding: 0 11.5rem;
-    color: gray;
     position: absolute;
     text-align: center;
-    top: 32rem;
+    top: 70%;
     font-family: var(--font2);
     font-weight: 600;
-    color: hsl(167, 40%, 24%);
+    color: rgb(86, 37, 37);
     line-height: 1.5rem;
 }
 
