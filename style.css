@@ -104,6 +104,7 @@ nav {
     width: 8rem;
     height: 3rem;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .menu-contact:hover {
@@ -668,6 +669,12 @@ form h1 {
 @media(max-width: 1000px) {
     .cards-wrapper {
         gap: 4rem;
+    }
+}
+
+@media(max-height: 700px) {
+    form{
+        height: 90vh;
     }
 }
 

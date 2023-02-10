@@ -3,20 +3,31 @@ import { englishText } from './english_text.js';
 
 
 const menuContact = document.querySelector('.menu-contact');
+const menuMobileContact = document.querySelector('.menu-mobile-contact');
 const contactWrapper = document.querySelector('.contact-wrapper');
 const closeButton = document.querySelector('.close-button');
 const burger = document.querySelector(".burger");
 const navMobile = document.querySelector(".nav-mobile");
 const brazilFlag = document.querySelector('.brazil-flag');
 const usFlag = document.querySelector('.us-flag');
+const submit = document.querySelector("#submit");
+const nameContact = document.getElementById('name')
 
 
 menuContact.addEventListener('click', () => {
     contactWrapper.classList.add('contact-wrapper-active');
 })
 
+menuMobileContact.addEventListener('click', () => {
+    contactWrapper.classList.add('contact-wrapper-active');
+})
+
 closeButton.addEventListener('click', () => {
     contactWrapper.classList.remove('contact-wrapper-active');
+})
+
+navMobile.addEventListener('click', () => {
+    navMobile.classList.toggle("nav-mobile2");
 })
 
 burger.addEventListener("click", () => {
@@ -70,9 +81,37 @@ function translate(lang) {
 }
 
 
-const submit = document.querySelector("#submit");
-submit.addEventListener('click', () => {
-    alert(123)
+const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+const formContact = document.getElementById('form')
+
+submit.addEventListener('click', (e) => {
+    
+    if(nameContact.value === ''){
+        e.preventDefault();
+        alert('digite seu nome');
+        return;
+    }
+
+    if(!emailPattern.test(email.value)){
+        e.preventDefault();
+        alert('email incorreto')
+        return;
+    }
+    
+    if(message.value === ''){
+        e.preventDefault();
+        alert('digite uma mensagem');
+        return;
+    }
+    
+    nameContact.value = '';
+    email.value = '';
+    message.value = '';
+    alert('Email enviado com sucesso!');
 })
+
+
 
 
