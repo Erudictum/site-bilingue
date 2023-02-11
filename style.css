@@ -13,25 +13,25 @@
 body {
     overflow-x: hidden;
     min-width: 100vw;
-    position: relative;    
+    position: relative;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: rgb(101, 130, 204);
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: rgb(159, 178, 224);
     border-radius: 2rem;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: rgb(209, 217, 241);
-  }
+}
 
 .header {
     width: 100vw;
@@ -245,11 +245,11 @@ nav {
     position: relative;
 }
 
-.learn1:hover .underline1{
+.learn1:hover .underline1 {
     background-color: #e2dc87;
 }
 
-.learn2:hover .underline2{
+.learn2:hover .underline2 {
     background-color: #d69378;
 }
 
@@ -528,7 +528,8 @@ footer {
     align-items: center;
     display: none;
 }
-.contact-wrapper-active{
+
+.contact-wrapper-active {
     display: flex;
 }
 
@@ -613,9 +614,27 @@ form h1 {
     font-size: 1rem;
     font-weight: 300;
     color: rgb(172, 172, 172);
-    /* padding-left: .3rem; */
     word-spacing: .2rem;
 }
+
+.alert {
+    font-family: var(--font2);
+    color: rgb(235, 224, 78);
+    display: none;
+}
+
+.email-sent {
+    color: rgb(50, 228, 50);
+    font-family: var(--font2);
+    position: absolute;
+    top: 30px;
+    display: none;
+}
+
+.alert-active {
+    display: block;
+}
+
 
 @media(max-width: 1099px) {
     .bc3 {
@@ -673,7 +692,7 @@ form h1 {
 }
 
 @media(max-height: 700px) {
-    form{
+    form {
         height: 90vh;
     }
 }

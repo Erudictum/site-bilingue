@@ -10,8 +10,14 @@ const burger = document.querySelector(".burger");
 const navMobile = document.querySelector(".nav-mobile");
 const brazilFlag = document.querySelector('.brazil-flag');
 const usFlag = document.querySelector('.us-flag');
-const submit = document.querySelector("#submit");
-const nameContact = document.getElementById('name')
+const submitContact = document.querySelector("#submit");
+const nameContact = document.querySelector('#name');
+const emailContact = document.querySelector('#email');
+const messageContact = document.querySelector('#message');
+const alertName = document.querySelector('.alert-name');
+const alertEmail = document.querySelector('.alert-email');
+const alertMessage = document.querySelector('.alert-message');
+const emailSent = document.querySelector('.email-sent');
 
 
 menuContact.addEventListener('click', () => {
@@ -24,6 +30,13 @@ menuMobileContact.addEventListener('click', () => {
 
 closeButton.addEventListener('click', () => {
     contactWrapper.classList.remove('contact-wrapper-active');
+    emailSent.classList.remove('alert-active');
+    alertName.classList.remove('alert-active')
+    alertEmail.classList.remove('alert-active')
+    alertMessage.classList.remove('alert-active')
+    nameContact.value = '';
+    emailContact.value = '';
+    messageContact.value = '';
 })
 
 navMobile.addEventListener('click', () => {
@@ -57,6 +70,10 @@ function translate(lang) {
     $("#submit").val(lang.submitButton);
     $("#name").attr('placeholder', lang.formName);
     $("#message").attr('placeholder', lang.formMessage);
+    $(".alert-name").text(lang.alertName);
+    $(".alert-email").text(lang.alertEmail);
+    $(".alert-message").text(lang.alertMessage);
+    $(".email-sent").text(lang.emailSent);
     $('.slogan').text(lang.title);
     $('.bc1 h1').text(lang.boxTitle1);
     $('.bc1 h2').text(lang.boxText1);
@@ -84,34 +101,33 @@ function translate(lang) {
 const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
-const formContact = document.getElementById('form')
 
-submit.addEventListener('click', (e) => {
-    
-    if(nameContact.value === ''){
-        e.preventDefault();
-        alert('digite seu nome');
+
+submitContact.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    alertName.classList.remove('alert-active')
+    alertEmail.classList.remove('alert-active')
+    alertMessage.classList.remove('alert-active')
+
+
+    if (nameContact.value === '') {
+        alertName.classList.add('alert-active')
         return;
     }
 
-    if(!emailPattern.test(email.value)){
-        e.preventDefault();
-        alert('email incorreto')
+    if (!emailPattern.test(email.value)) {
+        alertEmail.classList.add('alert-active')
         return;
     }
-    
-    if(message.value === ''){
-        e.preventDefault();
-        alert('digite uma mensagem');
+
+    if (message.value === '') {
+        alertMessage.classList.add('alert-active')
         return;
     }
-    
+
     nameContact.value = '';
-    email.value = '';
-    message.value = '';
-    alert('Email enviado com sucesso!');
+    emailContact.value = '';
+    messageContact.value = '';
+    emailSent.classList.add('alert-active');
 })
-
-
-
-
