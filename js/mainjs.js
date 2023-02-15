@@ -18,6 +18,7 @@ const alertName = document.querySelector('.alert-name');
 const alertEmail = document.querySelector('.alert-email');
 const alertMessage = document.querySelector('.alert-message');
 const emailSent = document.querySelector('.email-sent');
+const toTopButton = document.querySelector('.to-top-button');
 
 
 menuContact.addEventListener('click', () => {
@@ -130,4 +131,16 @@ submitContact.addEventListener('click', (e) => {
     emailContact.value = '';
     messageContact.value = '';
     emailSent.classList.add('alert-active');
+})
+
+
+toTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+})
+
+window.addEventListener('scroll', () => {
+    toTopButton.classList.toggle('active', window.scrollY > 800)
 })

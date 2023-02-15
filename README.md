@@ -1,2 +1,4 @@
-# site-responsivo-bilingue
-Site responsivo bilíngue, criado com HTML, CSS e JavaScript.
+# Site responsivo bilíngue
+Em HTML, CSS e JavaScript.
+
+
