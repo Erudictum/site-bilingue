@@ -131,6 +131,10 @@ submitContact.addEventListener('click', (e) => {
     emailContact.value = '';
     messageContact.value = '';
     emailSent.classList.add('alert-active');
+
+    setTimeout(() => {
+        emailSent.classList.remove('alert-active');
+    }, 3000)
 })
 
 
