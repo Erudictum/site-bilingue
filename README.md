@@ -2,7 +2,7 @@
 
 <br>
 
-## Site com página única para agência de marketing
+## Site bilíngue, para agência de marketing
 
 <br>
 
