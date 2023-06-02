@@ -6,4 +6,4 @@
 
 <br>
 
->Site no ar: &nbsp; https://erudictum.github.io/site-responsivo-bilingue/
+>Site no ar: &nbsp; https://site-bilingue.vercel.app
